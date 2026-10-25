@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Alice Gomez</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    background: #1e293b;
+    color: #f8fafc;
+    scroll-behavior: smooth;
+}
+
+/* UPDATED HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+    
+    /* Background image on the hero */
+    background: 
+        linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)),
+        url('./image1.jpg') center/cover no-repeat;
+    text-align: center;
+}
+
+/* A framed photo directly on the hero section */
+.hero-image-frame {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    border: 4px solid #ec4899;
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+    overflow: hidden;
+    margin-bottom: 25px;
+    z-index: 2;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    color: #fff;
+    margin: 0;
+    z-index: 2;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #cbd5e1;
+    z-index: 2;
+}
+
+.btn {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 15px 40px;
+    background: #ec4899;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: 0.3s;
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
+    z-index: 2;
+}
+
+.btn:hover {
+    background: #db2777;
+    transform: translateY(-5px);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* OTHER SECTIONS */
+section.content-section {
+    padding: 80px 25px;
+    text-align: center;
+    background: rgba(30, 41, 59, 0.95);
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    border-radius: 20px;
+    width: 200px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s, border-color 0.4s;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ec4899;
+}
+
+.card h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #f472b6;
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.image-section-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(236, 72, 153, 0.2);
+    background: #0f172a;
+    padding: 8px;
+}
+
+.image-section-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.image-caption {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #f472b6;
+    text-align: center;
+}
+
+.video-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.2);
+    background: #0f172a;
+    padding: 8px;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    display: block;
+    border-radius: 10px;
+}
+
+.video-error {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(239, 68, 68, 0.9);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none;
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #f472b6;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #cbd5e1;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: left; 
+}
+
+section p.center-text {
+    text-align: center;
+}
+
+section h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: #ec4899;
+    bottom: -12px;
+    left: 20%;
+    border-radius: 3px;
+}
+
+strong {
+    color: #f472b6;
+    font-size: 1.3rem;
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero-image-frame { width: 140px; height: 140px; }
+    .video-container video { max-height: 300px; }
+    .image-section-container img { max-height: 400px; }
+    section.content-section { padding: 40px 20px; margin: 15px; border-radius: 16px; }
+    section h2 { font-size: 1.8rem; }
+    .card { width: 100%; max-width: 280px; }
+    section p { font-size: 1rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <!-- New Framed Image on the Main Screen -->
+    <div class="hero-image-frame">
+        <img src="image3.jpeg" alt="Alice">
+    </div>
+    
+    <h1 id="typing"></h1>
+    <p>To the woman who changed my world</p>
+    <button class="btn" onclick="scrollToSection()">Discover</button>
+</section>
+
+<!-- STORY SECTION -->
+<section id="story" class="content-section">
+    <h2>How It All Began</h2>
+    <p>I never expected a simple conversation to turn into the best part of my life. It started as a spark, a casual hello, but quickly grew into a wildfire of laughter, late-night secrets, and a connection I had only ever dreamed of.
+
+You entered my life quietly, but you took up residence in my heart loudly. You shifted my perspective, turning ordinary days into something I look forward to. You aren't just someone I know; you are the person my soul was quietly waiting to meet. 
+
+We aren't a perfect, cookie-cutter love story. We've had our misunderstandings and our quiet moments. But what makes us special is that we always find our way back to each other. Your presence in my life feels like an anchor in a storm—steady, comforting, and exactly where I need to be.
+
+Loving you is the easiest choice I've ever made. It's not just about the grand gestures; it's about choosing you in the small moments, holding onto your hand when things get hard, and knowing that as long as we have each other, we can face anything.
+
+This is our reality—not a fairy tale, but something far better. It's raw, it's real, and it's built on a foundation of deep, unwavering love.</p>
+</section>
+
+<!-- IMAGE 1 SECTION -->
+<section class="content-section">
+    <h2>A Beautiful Memory</h2>
+    <div class="image-section-container">
+        <!-- Make sure the extension matches (.jpg, .jpeg, or .png) -->
+        <img src="image1.jpeg" alt="A beautiful memory with Alice">
+    </div>
+    <p class="image-caption">"Every moment with you is a moment I want to freeze in time."</p>
+</section>
+
+<!-- ADMIRE SECTION -->
+<section class="content-section">
+    <h2>The Details I Love</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Your Laugh</h3>
+            <p class="center-text" style="font-size: 0.95rem; color: #cbd5e1;">It's the sound that instantly makes any bad day better.</p>
+        </div>
+        <div class="card">
+            <h3>Your Mind</h3>
+            <p class="center-text" style="font-size: 0.95rem; color: #cbd5e1;">The way you think and see the world constantly inspires me.</p>
+        </div>
+        <div class="card">
+            <h3>Your Heart</h3>
+            <p class="center-text" style="font-size: 0.95rem; color: #cbd5e1;">The endless love and compassion you show to everyone around you.</p>
+        </div>
+    </div>
+</section>
+
+<!-- IMAGE 2 SECTION -->
+<section class="content-section">
+    <h2>My Favorite View</h2>
+    <div class="image-section-container">
+        <!-- Make sure the extension matches (.jpg, .jpeg, or .png) -->
+        <img src="image2.jpeg" alt="Another beautiful moment with Alice">
+    </div>
+    <p class="image-caption">"You are the best part of every single day."</p>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="content-section">
+    <h2>A Little Something For You</h2>
+    <div class="video-container">
+        <video id="birthdayVideo" controls muted loop playsinline preload="auto">
+            <!-- Make sure your video is exactly 'video.mp4' -->
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <p id="videoError" class="video-error">
+        ⚠️ Video format not supported or file not found. Please ensure <code>video.mp4</code> is in the same folder as this HTML file.
+    </p>
+</section>
+
+<!-- LETTER SECTION -->
+<section class="content-section">
+    <h2>From My Heart to Yours</h2>
+    <p>
+        My Beautiful Alice,<br><br>
+
+        Every year this day comes around, but this year feels different. This year, I get to celebrate you knowing exactly how deeply you've impacted my life. Happy Birthday to the woman who holds my heart so effortlessly.<br><br>
+
+        I wish I could put into words what you mean to me, but words always seem to fall short. You are my safe haven, my greatest adventure, and my most peaceful thought all at once. Before you, I didn't know what it felt like to truly be understood. You look at me and see the parts of me I try to hide, and you love me through them all.<br><br>
+
+        I admire your strength. Life hasn't always been easy, but you face it with such grace and a fierce determination that leaves me in awe. I admire your kindness—how you give so much of yourself to others without ever expecting anything in return. And I admire your beauty, not just the way you look, but the way your soul shines through your eyes.<br><br>
+
+        As you celebrate today, I want you to know that I am so incredibly proud to be by your side. I promise to always be your biggest supporter, your loudest cheerleader, and the shoulder you can always lean on. I promise to celebrate your victories as if they were my own and to hold you tight through the tough times.<br><br>
+
+        I hope this year brings you everything you've been dreaming of. May you feel as special, as loved, and as beautiful as you truly are. You deserve the entire world, Alice, and I will spend as long as I can trying to give it to you.<br><br>
+
+        Thank you for choosing me. Thank you for your patience, your love, and your light.<br><br>
+
+        Here's to many more years of us.
+
+        <strong>Happy Birthday, Alice Gomez</strong>
+    </p>
+</section>
+
+<!-- SURPRISE SECTION -->
+<section class="content-section">
+    <h2>Wait, One More Thing...</h2>
+    <button class="btn" onclick="showSurprise()">Click Here</button>
+    <p id="surpriseText" class="hidden center-text">
+        I love you more than words can say. Today, tomorrow, and always.
+    </p>
+</section>
+
+<script>
+/* --- Typing effect --- */
+const text = "Happy Birthday, Alice";
+let index = 0;
+
+function typeEffect() {
+    if (index < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 110); 
+    }
+}
+typeEffect();
+
+/* --- Smooth scroll --- */
+function scrollToSection() {
+    document.getElementById("story").scrollIntoView({ behavior: 'smooth' });
+}
+
+/* --- Surprise reveal --- */
+function showSurprise() {
+    const surpriseEl = document.getElementById("surpriseText");
+    if (surpriseEl.style.display === "block") {
+        surpriseEl.style.display = "none"; 
+    } else {
+        surpriseEl.style.display = "block"; 
+    }
+}
+
+/* --- Video handling --- */
+const vid = document.getElementById("birthdayVideo");
+const vidError = document.getElementById("videoError");
+
+if (vid) {
+    vid.addEventListener("error", function () {
+        vidError.style.display = "block";
+    });
+
+    vid.querySelectorAll("source").forEach(function (src) {
+        src.addEventListener("error", function () {
+            vidError.style.display = "block";
+            console.error("Video source failed:", src.src);
+        });
+    });
+
+    vid.play().catch(function (error) {
+        console.log("Autoplay blocked or video failed:", error);
+        if (vid.readyState === 0) {
+            vidError.style.display = "block";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
